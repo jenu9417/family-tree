@@ -2,6 +2,7 @@ package com.jenu.gt.familytree.relex;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Predicate;
@@ -14,11 +15,17 @@ public class SimpleRelationExtractor implements RelationExtractor {
 
 	@Override
 	public Member father(Member member) {
+		if (member.getParent() == null) {
+			return null;
+		}
 		return member.getParent().getGender() == Gender.MALE ? member.getParent() : member.getParent().getSpouse();
 	}
 
 	@Override
 	public Member mother(Member member) {
+		if (member.getParent() == null) {
+			return null;
+		}
 		return member.getParent().getGender() == Gender.FEMALE ? member.getParent() : member.getParent().getSpouse();
 	}
 
@@ -72,6 +79,9 @@ public class SimpleRelationExtractor implements RelationExtractor {
 
 	@Override
 	public List<Member> cousins(Member member) {
+		if (member.getParent() == null) {
+			return Collections.emptyList();
+		}
 		final Member parent = member.getParent().getChildren().isEmpty() ? member.getParent().getSpouse()
 				: member.getParent();
 		final Member grandParent = parent.getParent().getChildren().isEmpty() ? parent.getParent().getSpouse()
@@ -81,39 +91,51 @@ public class SimpleRelationExtractor implements RelationExtractor {
 	}
 
 	@Override
-	public List<Member> brotherInLaw(Member member) {
+	public List<Member> brotherInLaws(Member member) {
 		return member.getParent() == null ? brothers(member.getSpouse())
 				: sisters(member).stream().map(Member::getSpouse).filter(Objects::nonNull).collect(Collectors.toList());
 	}
 
 	@Override
-	public List<Member> sisterInLaw(Member member) {
+	public List<Member> sisterInLaws(Member member) {
 		return member.getParent() == null ? sisters(member.getSpouse()) : brothers(member).stream()
 				.map(Member::getSpouse).filter(Objects::nonNull).collect(Collectors.toList());
 	}
 
 	@Override
-	public List<Member> maternalAunt(Member member) {
+	public List<Member> maternalAunts(Member member) {
 		final Member mother = mother(member);
-		return mother.getParent() == null ? sisterInLaw(mother) : sisters(mother);
+		if (mother == null) {
+			return Collections.emptyList();
+		}
+		return mother.getParent() == null ? sisterInLaws(mother) : sisters(mother);
 	}
 
 	@Override
-	public List<Member> paternalAunt(Member member) {
+	public List<Member> paternalAunts(Member member) {
 		final Member father = father(member);
-		return father.getParent() == null ? sisterInLaw(father) : sisters(father);
+		if (father == null) {
+			return Collections.emptyList();
+		}
+		return father.getParent() == null ? sisterInLaws(father) : sisters(father);
 	}
 
 	@Override
-	public List<Member> maternalUncle(Member member) {
+	public List<Member> maternalUncles(Member member) {
 		final Member mother = mother(member);
-		return mother.getParent() == null ? brotherInLaw(mother) : brothers(mother);
+		if (mother == null) {
+			return Collections.emptyList();
+		}
+		return mother.getParent() == null ? brotherInLaws(mother) : brothers(mother);
 	}
 
 	@Override
-	public List<Member> paternalUncle(Member member) {
+	public List<Member> paternalUncles(Member member) {
 		final Member father = father(member);
-		return father.getParent() == null ? brotherInLaw(father) : brothers(father);
+		if (father == null) {
+			return Collections.emptyList();
+		}
+		return father.getParent() == null ? brotherInLaws(father) : brothers(father);
 	}
 
 }

@@ -11,130 +11,173 @@ import com.jenu.gt.familytree.util.DataLoader;
 
 public class Main {
 
-	private static final Scanner IN = new Scanner(System.in);
-
 	public static void main(String[] args) {
-		final FamilyTree ftree = DataLoader.getLoadedFamilyTree();
+		final FamilyTree ftree = DataLoader.loadDefaultFamilyTree();
 		final RelationExtractor relEx = new SimpleRelationExtractor();
 
-		while (doContinue()) {
-			System.out.println("Enter name and relation");
-			final String name = IN.next();
-			final String relation = IN.next();
-			final Member member = ftree.getMember(name);
+		try (Scanner scanner = new Scanner(System.in)) {
 
-			System.out.println("\nOutput:");
-			switch (relation) {
-			case "father":
-				final String father = relEx.father(member).getName();
-				System.out.println(father);
-				break;
+			while (doContinue(scanner)) {
+				System.out.println("Enter Name (Case Sensitive)\n");
+				final String name = scanner.next();
+				final Member member = ftree.getMember(name);
 
-			case "mother":
-				final String mother = relEx.mother(member).getName();
-				System.out.println(mother);
-				break;
+				if (member == null) {
+					System.out.println("Member not found!!\n");
+					continue;
+				}
 
-			case "spouse":
-				final String spouse = relEx.spouse(member).getName();
-				System.out.println(spouse);
-				break;
+				final String relation = getRelation(scanner);
+				System.out.println("\nOutput:\n");
 
-			case "children":
-				final List<Member> children = relEx.children(member);
-				children.forEach(x -> System.out.print(x.getName() + "  "));
-				System.out.println();
-				break;
-
-			case "sons":
-				final List<Member> sons = relEx.sons(member);
-				sons.forEach(x -> System.out.print(x.getName() + "  "));
-				System.out.println();
-				break;
-
-			case "daughters":
-				final List<Member> daughters = relEx.daughters(member);
-				daughters.forEach(x -> System.out.print(x.getName() + "  "));
-				System.out.println();
-				break;
-
-			case "brothers":
-				final List<Member> brothers = relEx.brothers(member);
-				brothers.forEach(x -> System.out.print(x.getName() + "  "));
-				System.out.println();
-				break;
-
-			case "sisters":
-				final List<Member> sisters = relEx.sisters(member);
-				sisters.forEach(x -> System.out.print(x.getName() + "  "));
-				System.out.println();
-				break;
-
-			case "grandDaughters":
-				final List<Member> grandDaughters = relEx.grandDaughters(member);
-				grandDaughters.forEach(x -> System.out.print(x.getName() + "  "));
-				System.out.println();
-				break;
-
-			case "cousins":
-				final List<Member> cousins = relEx.cousins(member);
-				cousins.forEach(x -> System.out.print(x.getName() + "  "));
-				System.out.println();
-				break;
-
-			case "brotherInLaw":
-				final List<Member> brotherInLaw = relEx.brotherInLaw(member);
-				brotherInLaw.forEach(x -> System.out.print(x.getName() + "  "));
-				System.out.println();
-				break;
-
-			case "sisterInLaw":
-				final List<Member> sisterInLaw = relEx.sisterInLaw(member);
-				sisterInLaw.forEach(x -> System.out.print(x.getName() + "  "));
-				System.out.println();
-				break;
-
-			case "maternalAunt":
-				final List<Member> maternalAunt = relEx.maternalAunt(member);
-				maternalAunt.forEach(x -> System.out.print(x.getName() + "  "));
-				System.out.println();
-				break;
-
-			case "paternalAunt":
-				final List<Member> paternalAunt = relEx.paternalAunt(member);
-				paternalAunt.forEach(x -> System.out.print(x.getName() + "  "));
-				System.out.println();
-				break;
-
-			case "maternalUncle":
-				final List<Member> maternalUncle = relEx.maternalUncle(member);
-				maternalUncle.forEach(x -> System.out.print(x.getName() + "  "));
-				System.out.println();
-				break;
-
-			case "paternalUncle":
-				final List<Member> paternalUncle = relEx.paternalUncle(member);
-				paternalUncle.forEach(x -> System.out.print(x.getName() + "  "));
-				System.out.println();
-				break;
-
-			default:
-				System.out.println("Invalid Relation");
-				break;
+				findRelation(relEx, relation, member);
 			}
+		} catch (Exception e) {
+			System.out.println("Error while finding relation." + e.getMessage());
 		}
 	}
 
-	private static boolean doContinue() {
+	private static void findRelation(RelationExtractor relEx, String relation, Member member) {
+		switch (relation) {
+		case "1":
+			final Member father = relEx.father(member);
+			print(father);
+			break;
+
+		case "2":
+			final Member mother = relEx.mother(member);
+			print(mother);
+			break;
+
+		case "3":
+			final Member spouse = relEx.spouse(member);
+			print(spouse);
+			break;
+
+		case "4":
+			final List<Member> children = relEx.children(member);
+			print(children);
+			break;
+
+		case "5":
+			final List<Member> sons = relEx.sons(member);
+			print(sons);
+			break;
+
+		case "6":
+			final List<Member> daughters = relEx.daughters(member);
+			print(daughters);
+			break;
+
+		case "7":
+			final List<Member> brothers = relEx.brothers(member);
+			print(brothers);
+			break;
+
+		case "8":
+			final List<Member> sisters = relEx.sisters(member);
+			print(sisters);
+			break;
+
+		case "9":
+			final List<Member> grandDaughters = relEx.grandDaughters(member);
+			print(grandDaughters);
+			break;
+
+		case "10":
+			final List<Member> cousins = relEx.cousins(member);
+			print(cousins);
+			break;
+
+		case "11":
+			final List<Member> brotherInLaw = relEx.brotherInLaws(member);
+			print(brotherInLaw);
+			break;
+
+		case "12":
+			final List<Member> sisterInLaw = relEx.sisterInLaws(member);
+			print(sisterInLaw);
+			break;
+
+		case "13":
+			final List<Member> maternalAunt = relEx.maternalAunts(member);
+			print(maternalAunt);
+			break;
+
+		case "14":
+			final List<Member> paternalAunt = relEx.paternalAunts(member);
+			print(paternalAunt);
+			break;
+
+		case "15":
+			final List<Member> maternalUncle = relEx.maternalUncles(member);
+			print(maternalUncle);
+			break;
+
+		case "16":
+			final List<Member> paternalUncle = relEx.paternalUncles(member);
+			print(paternalUncle);
+			break;
+
+		default:
+			System.out.println("Invalid Relation");
+			break;
+		}
+	}
+
+	private static boolean doContinue(Scanner scanner) {
 		displayOptions();
-		return IN.nextInt() == 1;
+		return scanner.nextInt() == 1;
 	}
 
 	private static void displayOptions() {
 		System.out.println("\n------------------ Family Tree ------------------");
 		System.out.println("Select a number");
 		System.out.println("1. Find relative");
-		System.out.println("2. Exit");
+		System.out.println("2. Exit\n");
+	}
+
+	private static String getRelation(Scanner scanner) {
+		displayRelations();
+		return scanner.next();
+	}
+
+	private static void displayRelations() {
+		System.out.println("\n--------- Select a relation number ---------");
+		System.out.println("1. Father");
+		System.out.println("2. Mother");
+		System.out.println("3. Spouse");
+		System.out.println("4. Children");
+		System.out.println("5. Sons");
+		System.out.println("6. Daughters");
+		System.out.println("7. Brothers");
+		System.out.println("8. Sisters");
+		System.out.println("9. Grand Daughters");
+		System.out.println("10. Grand Sons");
+		System.out.println("11. Cousins");
+		System.out.println("12. Brother-In-Laws");
+		System.out.println("13. Sister-In-Laws");
+		System.out.println("14. Maternal Aunts");
+		System.out.println("15. Paternal Aunts");
+		System.out.println("16. Maternal Uncles");
+		System.out.println("17. Paternal Uncles");
+		System.out.println();
+	}
+
+	private static void print(Member member) {
+		if (member == null) {
+			System.out.println("No relative found!!");
+			return;
+		}
+		System.out.println(member.getName());
+	}
+
+	private static void print(List<Member> members) {
+		if (members == null || members.isEmpty()) {
+			System.out.println("No relative found!!");
+			return;
+		}
+		members.forEach(x -> System.out.print(x.getName() + "  "));
 	}
 
 }

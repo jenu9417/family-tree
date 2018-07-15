@@ -26,15 +26,15 @@ public interface RelationExtractor {
 
 	List<Member> cousins(Member member);
 
-	List<Member> brotherInLaw(Member member);
+	List<Member> brotherInLaws(Member member);
 
-	List<Member> sisterInLaw(Member member);
+	List<Member> sisterInLaws(Member member);
 
-	List<Member> maternalAunt(Member member);
+	List<Member> maternalAunts(Member member);
 
-	List<Member> paternalAunt(Member member);
+	List<Member> paternalAunts(Member member);
 
-	List<Member> maternalUncle(Member member);
+	List<Member> maternalUncles(Member member);
 
-	List<Member> paternalUncle(Member member);
+	List<Member> paternalUncles(Member member);
 }

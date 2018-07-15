@@ -22,7 +22,7 @@ public class Member {
 		this.name = name;
 		this.gender = gender;
 		this.parent = parent;
-		this.children = new HashMap<>(8);
+		this.children = new HashMap<>(4);
 	}
 
 	public String getName() {

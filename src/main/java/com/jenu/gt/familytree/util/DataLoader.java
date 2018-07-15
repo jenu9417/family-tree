@@ -13,7 +13,7 @@ public class DataLoader {
 
 	}
 
-	public static FamilyTree getLoadedFamilyTree() {
+	public static FamilyTree loadDefaultFamilyTree() {
 		final Member familyHead = new Member("King Shan", Gender.MALE, null);
 		final FamilyTree ftree = new FamilyTree(familyHead);
 
