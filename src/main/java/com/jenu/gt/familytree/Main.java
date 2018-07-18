@@ -41,6 +41,8 @@ public class Main {
 
 				if (relation.isPresent()) {
 					relation.get().findAndDisplayRelation(member);
+				} else {
+					LOGGER.warning("Invalid relation. Please mention a valid relation!!");
 				}
 
 			}
