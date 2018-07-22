@@ -2,7 +2,6 @@
 
 @author : Janardhanan V S
 
-@git : https://github.com/jenu9417/family-tree
 
 
 
@@ -30,11 +29,14 @@ Assumptions Made:
 
 Note: 
 -----
-1) Before trying to run build scripts, kindly give executable permission for the scripts.
 
-2) Kindly refer to the data set , since input is case sensitive. (Problem data available under /resources)
+1) Run the build scripts from /build-scripts folder, as relative paths will be used in the scripts.
 
-3) Have included few test cases. The rest of the test cases will be updated shortly, due to time constraints.
+2) Before trying to run build scripts, kindly give executable permission for the scripts. 
+
+3) Kindly refer to the data set , since input is case sensitive. (Problem data available under /resources)
+
+4) Have included few test cases. The rest of the test cases will be updated shortly, due to time constraints.
 
 
 
