@@ -1,4 +1,6 @@
-# family-tree
+# Family-Tree
+
+@author : Janardhanan V S
 
 
 Requirements:
