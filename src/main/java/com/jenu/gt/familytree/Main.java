@@ -22,8 +22,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		final FamilyTree ftree = DataLoader.loadDefaultFamilyTree();
-
-		try (Scanner scanner = new Scanner(System.in)) {
+		LOGGER.info("Default family data set of 'King Shan' initialized");
+		try (Scanner scanner = new Scanner(System.in).useDelimiter("\\n")) {
 
 			while (doContinue(scanner)) {
 				LOGGER.info("Enter Name (Case Sensitive)\n");
