@@ -47,6 +47,8 @@ public class Main {
 				}
 
 			}
+
+			LOGGER.info("Exiting family tree !!");
 		} catch (Exception e) {
 			LOGGER.severe("Error while finding relation." + e.getMessage());
 		}
