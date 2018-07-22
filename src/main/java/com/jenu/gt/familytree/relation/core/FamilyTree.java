@@ -1,6 +1,8 @@
 package com.jenu.gt.familytree.relation.core;
 
 import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import com.jenu.gt.familytree.bean.Member;
 import com.jenu.gt.familytree.bean.Member.Gender;
@@ -15,7 +17,11 @@ import com.jenu.gt.familytree.bean.Member.Gender;
  */
 public class FamilyTree {
 
+	/** The family head. */
 	private final Member familyHead;
+
+	/** The Constant LOGGER. */
+	private static final Logger LOGGER = Logger.getLogger(FamilyTree.class.getName());
 
 	public Member getFamilyHead() {
 		return familyHead;
@@ -77,14 +83,13 @@ public class FamilyTree {
 	 *            the gender
 	 * @param parent
 	 *            the parent
-	 * @return the member
 	 */
-	public Member addChild(String name, Gender gender, String parent) {
+	public void addChild(String name, Gender gender, String parent) {
 		final Member parentMember = getMember(parent);
 		final Member member = new Member(name, gender, parentMember);
 		parentMember.addChildren(member);
 
-		return member;
+		LOGGER.log(Level.FINER, "Child : %s added succesfully", name);
 	}
 
 	/**
@@ -94,9 +99,8 @@ public class FamilyTree {
 	 *            the name
 	 * @param partner
 	 *            the partner
-	 * @return the member
 	 */
-	public Member addSpouse(String name, String partner) {
+	public void addSpouse(String name, String partner) {
 		final Member partnerMember = getMember(partner);
 		final Gender gender = partnerMember.getGender() == Gender.MALE ? Gender.FEMALE : Gender.MALE;
 		final Member spouse = new Member(name, gender);
@@ -106,7 +110,7 @@ public class FamilyTree {
 		partnerMember.setSpouse(spouse);
 		partnerMember.setMarried(true);
 
-		return spouse;
+		LOGGER.log(Level.FINER, "Spouse : %s added succesfully", name);
 	}
 
 }

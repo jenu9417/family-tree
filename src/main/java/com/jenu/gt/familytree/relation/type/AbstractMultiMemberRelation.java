@@ -13,6 +13,7 @@ import com.jenu.gt.familytree.util.LogUtil;
  */
 public abstract class AbstractMultiMemberRelation implements Relation {
 
+	/** The Constant LOGGER. */
 	private static final Logger LOGGER = Logger.getLogger(AbstractMultiMemberRelation.class.getName());
 
 	/**
@@ -28,7 +29,6 @@ public abstract class AbstractMultiMemberRelation implements Relation {
 	public void findAndDisplayRelation(Member member) {
 		final List<Member> members = findRelation(member);
 		displayRelation(members);
-
 	}
 
 	/**
