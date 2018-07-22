@@ -5,8 +5,8 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 
 import com.jenu.gt.familytree.bean.Member;
-import com.jenu.gt.familytree.core.FamilyTree;
-import com.jenu.gt.familytree.core.RelationManager;
+import com.jenu.gt.familytree.relation.core.FamilyTree;
+import com.jenu.gt.familytree.relation.core.RelationManager;
 import com.jenu.gt.familytree.relation.logger.LoggerManager;
 import com.jenu.gt.familytree.relation.type.Relation;
 import com.jenu.gt.familytree.util.DataLoader;

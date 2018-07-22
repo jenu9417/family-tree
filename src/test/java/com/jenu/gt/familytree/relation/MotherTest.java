@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import com.jenu.gt.familytree.bean.Member;
 import com.jenu.gt.familytree.bean.Member.Gender;
-import com.jenu.gt.familytree.core.FamilyTree;
+import com.jenu.gt.familytree.relation.core.FamilyTree;
 import com.jenu.gt.familytree.test.util.TestDataProvider;
 
 public class MotherTest {

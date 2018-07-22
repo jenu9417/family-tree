@@ -1,6 +1,6 @@
 package com.jenu.gt.familytree.test.util;
 
-import com.jenu.gt.familytree.core.FamilyTree;
+import com.jenu.gt.familytree.relation.core.FamilyTree;
 import com.jenu.gt.familytree.util.DataLoader;
 
 public class TestDataProvider {

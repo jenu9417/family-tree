@@ -1,4 +1,4 @@
-package com.jenu.gt.familytree.core;
+package com.jenu.gt.familytree.relation.core;
 
 import java.util.Iterator;
 
