@@ -32,7 +32,7 @@ public class RelationManager {
 	}
 
 	private static void scanAndRegisterRelationships() throws InstantiationException, IllegalAccessException {
-		LOGGER.log(Level.INFO, "Initiating scanning and registering of relationships.");
+		LOGGER.info("Initiating scanning and registering of relationships.");
 		final Reflections reflections = new Reflections("com.jenu.gt.familytree.relation");
 		final Set<Class<? extends Object>> allClasses = reflections.getTypesAnnotatedWith(Relative.class);
 
@@ -43,7 +43,7 @@ public class RelationManager {
 			RELATION_MAP.put(key, value);
 		}
 
-		LOGGER.log(Level.INFO, "Scanning and registering relationships completed.");
+		LOGGER.info("Scanning and registering relationships completed.");
 	}
 
 	public static Optional<Relation> getRelation(String relation) {

@@ -7,6 +7,7 @@ import java.util.logging.LogRecord;
 
 public class CustomLogFormatter extends Formatter {
 
+	private static final char DOT = '.';
 	private static final String SPACE = " ";
 	private static final String NEW_LINE = "\n";
 	private static final String METHOD_SEPERATOR = "::";
@@ -16,9 +17,11 @@ public class CustomLogFormatter extends Formatter {
 
 	@Override
 	public String format(LogRecord record) {
+		final String fullClassName = record.getSourceClassName();
+		final String className = fullClassName.substring(fullClassName.lastIndexOf(DOT) + 1);
 		return dateFormatter.format(new Date(record.getMillis())) + SPACE + record.getLevel() + SPACE + "[ "
-				+ record.getThreadID() + " ]" + SPACE + record.getSourceClassName() + METHOD_SEPERATOR
-				+ record.getSourceMethodName() + MESSAGE_SEPERATOR + record.getMessage() + NEW_LINE;
+				+ record.getThreadID() + " ]" + SPACE + className + METHOD_SEPERATOR + record.getSourceMethodName()
+				+ MESSAGE_SEPERATOR + record.getMessage() + NEW_LINE;
 	}
 
 }
