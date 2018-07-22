@@ -50,8 +50,8 @@ public class DataLoader {
 		ftree.addChild("Vila", Gender.MALE, "Vich");
 		ftree.addSpouse("Jnki", "Vila");
 
-		ftree.addChild("Lavanya", Gender.FEMALE, "Vila");
-		ftree.addSpouse("Gru", "Lavanya");
+		ftree.addChild("Lavnya", Gender.FEMALE, "Vila");
+		ftree.addSpouse("Gru", "Lavnya");
 
 		ftree.addChild("Chika", Gender.FEMALE, "Vich");
 		ftree.addSpouse("Kpila", "Chika");

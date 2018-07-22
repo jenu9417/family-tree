@@ -8,7 +8,6 @@ import com.jenu.gt.familytree.bean.Member;
 public abstract class AbstractMultiMemberRelation implements Relation {
 
 	private static final Logger LOGGER = Logger.getLogger(AbstractMultiMemberRelation.class.getName());
-	private static final String SPACE = " ";
 
 	protected abstract List<Member> findRelation(Member member);
 
@@ -26,10 +25,12 @@ public abstract class AbstractMultiMemberRelation implements Relation {
 		}
 
 		final StringBuilder logBuilder = new StringBuilder();
+		logBuilder.append("[ ");
 		members.forEach(x -> {
 			logBuilder.append(x.getName());
-			logBuilder.append(SPACE);
+			logBuilder.append(",");
 		});
+		logBuilder.append(" ]");
 
 		final String logMessage = logBuilder.toString();
 
