@@ -9,6 +9,11 @@ import com.jenu.gt.familytree.bean.Member;
 import com.jenu.gt.familytree.bean.Member.Gender;
 import com.jenu.gt.familytree.relation.type.AbstractMultiMemberRelation;
 
+/**
+ * The Class GrandSons. Denotes male children of descendents of a person.
+ * 
+ * @author janardhanan.s
+ */
 @Relative(value = "grandSons")
 public class GrandSons extends AbstractMultiMemberRelation {
 

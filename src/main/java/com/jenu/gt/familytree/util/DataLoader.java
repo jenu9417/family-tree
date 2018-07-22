@@ -4,6 +4,11 @@ import com.jenu.gt.familytree.bean.Member;
 import com.jenu.gt.familytree.bean.Member.Gender;
 import com.jenu.gt.familytree.relation.core.FamilyTree;
 
+/**
+ * The Util Class DataLoader. Provides the default data-set of 'King Shan'.
+ * 
+ * @author janardhanan.s
+ */
 public class DataLoader {
 
 	/**
@@ -13,6 +18,12 @@ public class DataLoader {
 
 	}
 
+	/**
+	 * Load default family tree. Instantiates a {@link FamlilyTree}, with 'King
+	 * Shan' as family head and other and other members.
+	 *
+	 * @return the family tree
+	 */
 	public static FamilyTree loadDefaultFamilyTree() {
 		final Member familyHead = new Member("King Shan", Gender.MALE, null);
 		final FamilyTree ftree = new FamilyTree(familyHead);
@@ -22,7 +33,13 @@ public class DataLoader {
 		return ftree;
 	}
 
-	public static void loadDefaultFamilyTree(FamilyTree ftree) {
+	/**
+	 * Load default family tree.
+	 *
+	 * @param ftree
+	 *            the ftree
+	 */
+	private static void loadDefaultFamilyTree(FamilyTree ftree) {
 
 		ftree.addSpouse("Queen Anga", "King Shan");
 

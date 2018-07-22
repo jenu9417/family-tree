@@ -5,10 +5,23 @@ import java.util.logging.Logger;
 import com.jenu.gt.familytree.bean.Member;
 import com.jenu.gt.familytree.util.LogUtil;
 
+/**
+ * The Class AbstractSingleMemberRelation.
+ * 
+ * @author janardhanan.s
+ */
 public abstract class AbstractSingleMemberRelation implements Relation {
 
+	/** The Constant LOGGER. */
 	private static final Logger LOGGER = Logger.getLogger(AbstractMultiMemberRelation.class.getName());
 
+	/**
+	 * Find relation. Returns null, if no member is found.
+	 *
+	 * @param member
+	 *            the member
+	 * @return the member
+	 */
 	protected abstract Member findRelation(Member member);
 
 	@Override
@@ -17,6 +30,12 @@ public abstract class AbstractSingleMemberRelation implements Relation {
 		displayRelation(singleMember);
 	}
 
+	/**
+	 * Display relation.
+	 *
+	 * @param member
+	 *            the member
+	 */
 	protected void displayRelation(Member member) {
 		if (member == null) {
 			LogUtil.logOutput(LOGGER, "No relative found !!");

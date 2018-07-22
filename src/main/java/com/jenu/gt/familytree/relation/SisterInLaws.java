@@ -8,6 +8,11 @@ import com.jenu.gt.familytree.annotation.Relative;
 import com.jenu.gt.familytree.bean.Member;
 import com.jenu.gt.familytree.relation.type.AbstractMultiMemberRelation;
 
+/**
+ * The Class SisterInLaws. Denotes spouse's sisters or wives of siblings.
+ * 
+ * @author janardhanan.s
+ */
 @Relative(value = "sisterInLaws")
 public class SisterInLaws extends AbstractMultiMemberRelation {
 

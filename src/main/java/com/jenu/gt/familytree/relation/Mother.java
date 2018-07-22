@@ -5,6 +5,11 @@ import com.jenu.gt.familytree.bean.Member;
 import com.jenu.gt.familytree.bean.Member.Gender;
 import com.jenu.gt.familytree.relation.type.AbstractSingleMemberRelation;
 
+/**
+ * The Class Mother. Denotes female parent of a person.
+ * 
+ * @author janardhanan.s
+ */
 @Relative(value = "mother")
 public class Mother extends AbstractSingleMemberRelation {
 

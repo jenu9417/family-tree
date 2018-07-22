@@ -5,6 +5,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * The Bean Class Member. Holds necessary details to identify a family member.
+ * 
+ * @author janardhanan.s
+ */
 public class Member {
 
 	private final String name;
@@ -69,6 +74,9 @@ public class Member {
 		this.children.putAll(Arrays.stream(children).collect(Collectors.toMap(Member::getName, x -> x)));
 	}
 
+	/**
+	 * The Enum Gender. Can be male or female.
+	 */
 	public enum Gender {
 		MALE, FEMALE;
 	}

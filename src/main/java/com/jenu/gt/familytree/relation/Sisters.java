@@ -9,6 +9,11 @@ import com.jenu.gt.familytree.bean.Member;
 import com.jenu.gt.familytree.bean.Member.Gender;
 import com.jenu.gt.familytree.relation.type.AbstractMultiMemberRelation;
 
+/**
+ * The Class Sisters. Denotes female siblings.
+ * 
+ * @author janardhanan.s
+ */
 @Relative(value = "sisters")
 public class Sisters extends AbstractMultiMemberRelation {
 

@@ -9,6 +9,11 @@ import com.jenu.gt.familytree.annotation.Relative;
 import com.jenu.gt.familytree.bean.Member;
 import com.jenu.gt.familytree.relation.type.AbstractMultiMemberRelation;
 
+/**
+ * The Class Cousins. Denotes children of parents siblings.
+ * 
+ * @author janardhanan.s
+ */
 @Relative(value = "cousins")
 public class Cousins extends AbstractMultiMemberRelation {
 

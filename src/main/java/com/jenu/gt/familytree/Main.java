@@ -12,8 +12,15 @@ import com.jenu.gt.familytree.relation.type.Relation;
 import com.jenu.gt.familytree.util.DataLoader;
 import com.jenu.gt.familytree.util.LogUtil;
 
+/**
+ * The Main Class. Provides interface to communicate with user. Accepts user
+ * input and provides corresponding output.
+ * 
+ * @author janardhanan.s
+ */
 public class Main {
 
+	/** The Constant LOGGER. */
 	private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
 
 	static {
@@ -21,6 +28,12 @@ public class Main {
 		RelationManager.initialize();
 	}
 
+	/**
+	 * The main method.
+	 *
+	 * @param args
+	 *            the arguments
+	 */
 	public static void main(String[] args) {
 		final FamilyTree ftree = DataLoader.loadDefaultFamilyTree();
 		LOGGER.info("Default family data set of 'King Shan' initialized");
@@ -54,8 +67,17 @@ public class Main {
 		}
 	}
 
+	/**
+	 * The method doContinue. Displays available menu and based on user input
+	 * performs action. Continues till exit / invalid choice is invoked.
+	 *
+	 * @param scanner
+	 *            the scanner
+	 * @return true, if successful
+	 */
 	private static boolean doContinue(Scanner scanner) {
 		displayOptions();
+
 		switch (scanner.nextInt()) {
 		case 1:
 			return true;
@@ -69,6 +91,9 @@ public class Main {
 		}
 	}
 
+	/**
+	 * Display options.
+	 */
 	private static void displayOptions() {
 		LOGGER.info("\n\n------------------ Family Tree ------------------\n");
 		LOGGER.info("# ----- Select a number ----- #");
@@ -77,6 +102,9 @@ public class Main {
 		LOGGER.info("3. Exit\n");
 	}
 
+	/**
+	 * Display relaions. Lists all the available relations.
+	 */
 	private static void displayRelaions() {
 		final StringBuilder relationBuilder = new StringBuilder();
 		relationBuilder.append("[ ");

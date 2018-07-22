@@ -6,6 +6,13 @@ import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * The Class LoggerManager. Initializes Logger configuration with a console
+ * handler and a file handler. By default the file will be written under the
+ * name 'family-tree.log'
+ * 
+ * @author janardhanan.s
+ */
 public class LoggerManager {
 
 	private static final String DEFAULT_FILE_NAME = "family_tree.log";

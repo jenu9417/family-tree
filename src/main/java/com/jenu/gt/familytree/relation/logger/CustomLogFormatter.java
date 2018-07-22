@@ -4,7 +4,17 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 
+/**
+ * The CustomLogFormatter class for {@link Logger}. <br>
+ * <br>
+ * <b>Format: </b><br>
+ * 'Date' 'Time' 'Timezone' 'Log_Level' [ 'Thread_ID' ]
+ * 'Class_Name'::'Method_Name' - 'Message'
+ * 
+ * @author janardhanan.s
+ */
 public class CustomLogFormatter extends Formatter {
 
 	private static final char DOT = '.';

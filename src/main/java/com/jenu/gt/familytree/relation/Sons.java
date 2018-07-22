@@ -8,6 +8,11 @@ import com.jenu.gt.familytree.bean.Member;
 import com.jenu.gt.familytree.bean.Member.Gender;
 import com.jenu.gt.familytree.relation.type.AbstractMultiMemberRelation;
 
+/**
+ * The Class Sons. Denotes male children of a person.
+ * 
+ * @author janardhanan.s
+ */
 @Relative(value = "sons")
 public class Sons extends AbstractMultiMemberRelation {
 

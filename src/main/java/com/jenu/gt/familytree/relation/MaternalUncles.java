@@ -7,6 +7,12 @@ import com.jenu.gt.familytree.annotation.Relative;
 import com.jenu.gt.familytree.bean.Member;
 import com.jenu.gt.familytree.relation.type.AbstractMultiMemberRelation;
 
+/**
+ * The Class MaternalUncles. Denotes mother's brother of mothers
+ * brother-in-laws.
+ * 
+ * @author janardhanan.s
+ */
 @Relative(value = "maternalUncles")
 public class MaternalUncles extends AbstractMultiMemberRelation {
 

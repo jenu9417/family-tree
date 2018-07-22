@@ -8,6 +8,11 @@ import com.jenu.gt.familytree.bean.Member;
 import com.jenu.gt.familytree.bean.Member.Gender;
 import com.jenu.gt.familytree.relation.type.AbstractMultiMemberRelation;
 
+/**
+ * The Class Daughters. Denotes female children of a person.
+ * 
+ * @author janardhanan.s
+ */
 @Relative(value = "daughters")
 public class Daughters extends AbstractMultiMemberRelation {
 
