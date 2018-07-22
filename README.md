@@ -9,8 +9,11 @@ Requirements:
 -------------
 
 JRE 1.8+
+
 Maven
+
 JAVA_HOME should be set in path
+
 
 
 
