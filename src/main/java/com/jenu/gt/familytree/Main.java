@@ -10,6 +10,7 @@ import com.jenu.gt.familytree.relation.core.RelationManager;
 import com.jenu.gt.familytree.relation.logger.LoggerManager;
 import com.jenu.gt.familytree.relation.type.Relation;
 import com.jenu.gt.familytree.util.DataLoader;
+import com.jenu.gt.familytree.util.LogUtil;
 
 public class Main {
 
@@ -42,7 +43,7 @@ public class Main {
 				if (relation.isPresent()) {
 					relation.get().findAndDisplayRelation(member);
 				} else {
-					LOGGER.warning("Invalid relation. Please mention a valid relation!!");
+					LogUtil.logOutput(LOGGER, "Invalid relation. Please mention a valid relation!!");
 				}
 
 			}
@@ -83,9 +84,7 @@ public class Main {
 		});
 		relationBuilder.append(" ]");
 
-		final String logMessage = relationBuilder.toString();
-
-		LOGGER.info(logMessage);
+		LogUtil.logOutput(LOGGER, relationBuilder.toString());
 	}
 
 }
