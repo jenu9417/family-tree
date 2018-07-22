@@ -1,0 +1,63 @@
+22-Jul-2018 03:15:58:499 IST INFO [ 1 ] LoggerManager::initialize - Initial Log Message
+22-Jul-2018 03:15:58:510 IST INFO [ 1 ] RelationManager::scanAndRegisterRelationships - Initiating scanning and registering of relationships.
+22-Jul-2018 03:15:58:719 IST INFO [ 1 ] RelationManager::scanAndRegisterRelationships - Scanning and registering relationships completed.
+22-Jul-2018 03:15:58:751 IST INFO [ 1 ] Main::main - Default family data set of 'King Shan' initialized
+22-Jul-2018 03:15:58:753 IST INFO [ 1 ] Main::displayOptions - 
+
+------------------ Family Tree ------------------
+
+22-Jul-2018 03:15:58:753 IST INFO [ 1 ] Main::displayOptions - # ----- Select a number ----- #
+22-Jul-2018 03:15:58:754 IST INFO [ 1 ] Main::displayOptions - 1. Find relative
+22-Jul-2018 03:15:58:754 IST INFO [ 1 ] Main::displayOptions - 2. List avaiable relations
+22-Jul-2018 03:15:58:754 IST INFO [ 1 ] Main::displayOptions - 3. Exit
+
+22-Jul-2018 03:16:06:794 IST INFO [ 1 ] Main::main - Enter Name (Case Sensitive)
+
+22-Jul-2018 03:16:10:182 IST INFO [ 1 ] Main::main - Enter Relation (Case Sensitive)
+
+22-Jul-2018 03:16:13:508 IST INFO [ 1 ] AbstractSingleMemberRelation::displayRelation - # ---------------------- Output ---------------------- #
+22-Jul-2018 03:16:13:509 IST INFO [ 1 ] AbstractSingleMemberRelation::displayRelation - 
+22-Jul-2018 03:16:13:511 IST INFO [ 1 ] AbstractSingleMemberRelation::displayRelation - King Shan
+22-Jul-2018 03:16:13:513 IST INFO [ 1 ] AbstractSingleMemberRelation::displayRelation - 
+22-Jul-2018 03:16:13:514 IST INFO [ 1 ] AbstractSingleMemberRelation::displayRelation - # ---------------------------------------------------- #
+22-Jul-2018 03:16:13:515 IST INFO [ 1 ] Main::displayOptions - 
+
+------------------ Family Tree ------------------
+
+22-Jul-2018 03:16:13:516 IST INFO [ 1 ] Main::displayOptions - # ----- Select a number ----- #
+22-Jul-2018 03:16:13:517 IST INFO [ 1 ] Main::displayOptions - 1. Find relative
+22-Jul-2018 03:16:13:518 IST INFO [ 1 ] Main::displayOptions - 2. List avaiable relations
+22-Jul-2018 03:16:13:519 IST INFO [ 1 ] Main::displayOptions - 3. Exit
+
+22-Jul-2018 03:16:24:362 IST INFO [ 1 ] Main::main - Enter Name (Case Sensitive)
+
+22-Jul-2018 03:16:28:790 IST INFO [ 1 ] Main::main - Enter Relation (Case Sensitive)
+
+22-Jul-2018 03:16:34:079 IST INFO [ 1 ] AbstractMultiMemberRelation::displayRelation - # ---------------------- Output ---------------------- #
+22-Jul-2018 03:16:34:080 IST INFO [ 1 ] AbstractMultiMemberRelation::displayRelation - 
+22-Jul-2018 03:16:34:080 IST INFO [ 1 ] AbstractMultiMemberRelation::displayRelation - [ Vila,Chika,Saayan,Satvy,Savya, ]
+22-Jul-2018 03:16:34:081 IST INFO [ 1 ] AbstractMultiMemberRelation::displayRelation - 
+22-Jul-2018 03:16:34:081 IST INFO [ 1 ] AbstractMultiMemberRelation::displayRelation - # ---------------------------------------------------- #
+22-Jul-2018 03:16:34:081 IST INFO [ 1 ] Main::displayOptions - 
+
+------------------ Family Tree ------------------
+
+22-Jul-2018 03:16:34:082 IST INFO [ 1 ] Main::displayOptions - # ----- Select a number ----- #
+22-Jul-2018 03:16:34:082 IST INFO [ 1 ] Main::displayOptions - 1. Find relative
+22-Jul-2018 03:16:34:082 IST INFO [ 1 ] Main::displayOptions - 2. List avaiable relations
+22-Jul-2018 03:16:34:082 IST INFO [ 1 ] Main::displayOptions - 3. Exit
+
+22-Jul-2018 03:18:01:366 IST INFO [ 1 ] Main::main - Enter Name (Case Sensitive)
+
+22-Jul-2018 03:18:04:486 IST INFO [ 1 ] Main::main - Enter Relation (Case Sensitive)
+
+22-Jul-2018 03:18:07:303 IST WARNING [ 1 ] AbstractSingleMemberRelation::displayRelation - No relative found!!
+22-Jul-2018 03:18:07:304 IST INFO [ 1 ] Main::displayOptions - 
+
+------------------ Family Tree ------------------
+
+22-Jul-2018 03:18:07:305 IST INFO [ 1 ] Main::displayOptions - # ----- Select a number ----- #
+22-Jul-2018 03:18:07:306 IST INFO [ 1 ] Main::displayOptions - 1. Find relative
+22-Jul-2018 03:18:07:307 IST INFO [ 1 ] Main::displayOptions - 2. List avaiable relations
+22-Jul-2018 03:18:07:307 IST INFO [ 1 ] Main::displayOptions - 3. Exit
+
