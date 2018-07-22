@@ -3,6 +3,8 @@
 @author : Janardhanan V S
 
 
+
+
 Requirements:
 -------------
 
@@ -16,9 +18,22 @@ Assumptions Made:
 ------------------
 
 1) No two members exists with the same name.
+
 2) The family tree denotes the direct descendents of 'King Shan'. For other member such as wifes of sons, their direct relations are not provided, as it will makeup another family tree
+
 3) The default family tree given with the problem, is preloaded. Addition of new family members is not provided, to keep it simple.
+
 4) Only Male and Female genders are currently supported.
+
+
+
+Note: 
+-----
+1) Before trying to run build scripts, kindly give executable permission for the scripts.
+
+2) Kindly refer to the data set , since input is case sensitive. (Problem data available under /resources)
+
+3) Have included few test cases. The rest of the test cases will be updated shortly, due to time constraints.
 
 
 
@@ -64,12 +79,3 @@ Enter Relation (Case Sensitive)
 
 ----------------------------------------------------	
 	
-	
-	
-	
-Note: 
------
-1) Before trying to run build scripts, kindly give executable permission for the scripts.
-2) Kindly refer to the data set, since input is case sensitive.
-3) Have included few test cases. The rest of the test cases will be updated shortly, due to time constraints.
-
