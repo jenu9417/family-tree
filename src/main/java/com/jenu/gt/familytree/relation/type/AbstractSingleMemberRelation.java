@@ -3,6 +3,7 @@ package com.jenu.gt.familytree.relation.type;
 import java.util.logging.Logger;
 
 import com.jenu.gt.familytree.bean.Member;
+import com.jenu.gt.familytree.util.LogUtil;
 
 public abstract class AbstractSingleMemberRelation implements Relation {
 
@@ -18,11 +19,11 @@ public abstract class AbstractSingleMemberRelation implements Relation {
 
 	protected void displayRelation(Member member) {
 		if (member == null) {
-			LOGGER.warning("No relative found!!");
+			LogUtil.logOutput(LOGGER, "No relative found !!");
 			return;
 		}
 
-		LOGGER.info(member.getName());
+		LogUtil.logOutput(LOGGER, member.getName());
 	}
 
 }

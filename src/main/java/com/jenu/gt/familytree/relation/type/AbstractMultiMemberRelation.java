@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import com.jenu.gt.familytree.bean.Member;
+import com.jenu.gt.familytree.util.LogUtil;
 
 public abstract class AbstractMultiMemberRelation implements Relation {
 
@@ -20,7 +21,7 @@ public abstract class AbstractMultiMemberRelation implements Relation {
 
 	protected void displayRelation(List<Member> members) {
 		if (members == null || members.isEmpty()) {
-			LOGGER.warning("No relative found!!");
+			LogUtil.logOutput(LOGGER, "No relative found !!");
 			return;
 		}
 
@@ -28,13 +29,13 @@ public abstract class AbstractMultiMemberRelation implements Relation {
 		logBuilder.append("[ ");
 		members.forEach(x -> {
 			logBuilder.append(x.getName());
-			logBuilder.append(",");
+			logBuilder.append(", ");
 		});
 		logBuilder.append(" ]");
 
 		final String logMessage = logBuilder.toString();
 
-		LOGGER.info(logMessage);
+		LogUtil.logOutput(LOGGER, logMessage);
 	}
 
 }

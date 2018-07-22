@@ -67,8 +67,8 @@ public class Main {
 	}
 
 	private static void displayOptions() {
-		LOGGER.info("\n------------------ Family Tree ------------------");
-		LOGGER.info("Select a number");
+		LOGGER.info("\n\n------------------ Family Tree ------------------\n");
+		LOGGER.info("# ----- Select a number ----- #");
 		LOGGER.info("1. Find relative");
 		LOGGER.info("2. List avaiable relations");
 		LOGGER.info("3. Exit\n");
